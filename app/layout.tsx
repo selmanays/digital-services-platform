@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/hooks/useAuth";
@@ -25,9 +25,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dijital Hizmet Platformu",
-  description: "Güvenilir hizmet sağlayıcıları ile ihtiyaçlarınızı karşılayın",
-  viewport: "width=device-width, initial-scale=1",
+  title: "Digital Service Platform",
+  description: "Meet your needs with trusted service providers",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#1a1a1a" },

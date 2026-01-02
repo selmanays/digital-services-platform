@@ -92,13 +92,24 @@ export function RequestForm({ onSubmit, initialProviderId }: RequestFormProps) {
     setFormData(prev => {
       if (field.includes('.')) {
         const [parent, child] = field.split('.');
-        return {
-          ...prev,
-          [parent]: {
-            ...prev[parent as keyof RequestFormData],
-            [child]: value
-          }
-        };
+        if (parent === 'location') {
+          return {
+            ...prev,
+            location: {
+              ...prev.location,
+              [child]: value
+            }
+          };
+        } else if (parent === 'budget') {
+          return {
+            ...prev,
+            budget: {
+              ...prev.budget,
+              [child]: value
+            }
+          };
+        }
+        return prev;
       }
       return { ...prev, [field]: value };
     });

@@ -67,7 +67,7 @@ export function EscrowStatus({ status, amount, requestId, createdAt, releasedAt 
               { label: 'Talep ID', value: requestId },
               { label: 'Oluşturulma', value: new Date(createdAt).toLocaleDateString('tr-TR') },
               releasedAt && { label: 'Serbest Bırakılma', value: new Date(releasedAt).toLocaleDateString('tr-TR') },
-            ].filter(Boolean).map((item, index) => (
+            ].filter((item): item is { label: string; value: string; highlight?: boolean } => Boolean(item)).map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -10 }}

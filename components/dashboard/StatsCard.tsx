@@ -19,9 +19,7 @@ export function StatsCard({ title, value, description, trend }: StatsCardProps) 
   const ref = useRef<HTMLDivElement>(null);
   const isNumeric = typeof value === 'number';
   const spring = useSpring(0, { stiffness: 50, damping: 30 });
-  const display = useTransform(spring, (current) =>
-    isNumeric ? Math.round(current) : value
-  );
+  const display = useTransform(spring, (current) => Math.round(current));
 
   useEffect(() => {
     if (isNumeric && ref.current) {
@@ -62,7 +60,7 @@ export function StatsCard({ title, value, description, trend }: StatsCardProps) 
             viewport={{ once: true }}
             transition={{ delay: 0.1, type: 'spring' }}
           >
-            {isNumeric ? display : value}
+            {isNumeric ? <motion.span>{display}</motion.span> : value}
           </motion.div>
           {trend && (
             <motion.div

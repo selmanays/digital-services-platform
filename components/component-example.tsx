@@ -14,7 +14,6 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
@@ -22,7 +21,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -104,11 +102,11 @@ function CardExample() {
                 Show Dialog
               </Button>
             </AlertDialogTrigger>
-            <AlertDialogContent size="sm">
+            <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogMedia>
-                  <HugeiconsIcon icon={BluetoothIcon} strokeWidth={2} />
-                </AlertDialogMedia>
+                <div className="flex items-center justify-center mb-4">
+                  <HugeiconsIcon icon={BluetoothIcon} strokeWidth={2} className="h-12 w-12 text-primary" />
+                </div>
                 <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
                 <AlertDialogDescription>
                   Do you want to allow the USB accessory to connect to this
@@ -150,9 +148,11 @@ function FormExample() {
     <Example title="Form">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>User Information</CardTitle>
-          <CardDescription>Please fill in your details below</CardDescription>
-          <CardAction>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <CardTitle>User Information</CardTitle>
+              <CardDescription>Please fill in your details below</CardDescription>
+            </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -382,7 +382,7 @@ function FormExample() {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem variant="destructive">
+                  <DropdownMenuItem className="text-destructive focus:text-destructive">
                     <HugeiconsIcon icon={LogoutIcon} strokeWidth={2} />
                     Sign Out
                     <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
@@ -390,7 +390,7 @@ function FormExample() {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-          </CardAction>
+          </div>
         </CardHeader>
         <CardContent>
           <form>

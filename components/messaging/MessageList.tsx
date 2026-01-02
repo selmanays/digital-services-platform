@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MessageThread } from '@/lib/types/message';
-import { mockUsers, mockProviders } from '@/lib/mock-data/users';
-import { mockProviders as mockProvidersData } from '@/lib/mock-data/providers';
+import { mockUsers } from '@/lib/mock-data/users';
+import { mockProviders } from '@/lib/mock-data/providers';
 import { FadeIn } from '@/components/animations';
 import { pulse } from '@/lib/animations';
 
@@ -24,7 +24,7 @@ export function MessageList({ threads, currentUserId, selectedThreadId }: Messag
     const user = mockUsers.find(u => u.id === otherParticipantId);
     if (user) return user.name;
     
-    const provider = mockProvidersData.find(p => p.id === otherParticipantId);
+    const provider = mockProviders.find(p => p.id === otherParticipantId);
     return provider?.name || 'Bilinmeyen';
   };
 

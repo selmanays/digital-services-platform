@@ -10,8 +10,8 @@ export interface Location {
 
 export interface WorkingHours {
   [key: string]: {
-    open: string;
-    close: string;
+    open?: string;
+    close?: string;
     closed?: boolean;
   };
 }

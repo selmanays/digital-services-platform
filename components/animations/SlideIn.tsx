@@ -10,6 +10,10 @@ interface SlideInProps {
 export function SlideIn({ 
   children, 
   className,
+  direction,
+  delay,
+  duration,
+  triggerOnce,
 }: SlideInProps) {
   return (
     <div className={className}>
