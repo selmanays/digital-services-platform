@@ -126,7 +126,7 @@ export default function RegisterPage() {
                           />
                         </FieldContent>
                       </Field>
-                      <Button type="button" onClick={handleNext} className="w-full" size="lg" className="gap-2">
+                      <Button type="button" onClick={handleNext} className="w-full gap-2" size="lg">
                         İleri
                         <ArrowRight className="h-4 w-4" />
                       </Button>
